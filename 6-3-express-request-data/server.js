@@ -35,7 +35,12 @@ LAB SETUP INSTRUCTIONS
  *   HINT: 
  *     const app = express();
  *     app.listen(3000, ()=> console.log(...));
- * 
+ 
+*/
+import express from "express";
+const app = express();
+app.listen(3000, () => console.log("API running at http://localhost:3000"));
+/*
  *============================================
  * TODO-2 (/echo route):
  * ============================================
@@ -104,8 +109,6 @@ LAB SETUP INSTRUCTIONS
  *
  */
 
-import express from "express";
-const app = express();
 
 
 // create server
