@@ -51,7 +51,25 @@ app.listen(3000, () => console.log("API running at http://localhost:3000"));
  *   HINT:
  *     app.get("/echo", (req,res)=>{ ... });
  *     const {name, age} = req.query;
- *
+ */
+app.get("/echo", (req, res) => {
+  const { name, age } = req.query;
+
+  if (!name || !age) {
+    return res.status(400).json({
+      ok: false,
+      error: "name & age required"
+    });
+  }
+
+  res.json({
+    ok: true,
+    name,
+    age,
+    msg: `Hello ${name}, you are ${age}`
+  });
+});
+ /*
  * ============================================
  * TODO-3 (/profile/:first/:last route):
  * ============================================
@@ -61,7 +79,19 @@ app.listen(3000, () => console.log("API running at http://localhost:3000"));
  *   HINT:
  *     app.get("/profile/:first/:last", (req,res)=>{ ... });
  *     const { first, last } = req.params;
- *
+ 
+
+ */
+app.get("/profile/:first/:last", (req, res) => {
+  const { first, last } = req.params;
+
+  res.json({
+    ok: true,
+    fullName: `${first} ${last}`
+  });
+});
+ /*
+
  * ============================================
  * TODO-4 (Param middleware):
  * ============================================
@@ -71,7 +101,11 @@ app.listen(3000, () => console.log("API running at http://localhost:3000"));
  *   - else store numeric value into req.userIdNum and call next()
  *   HINT:
  *     app.param("userId", (req,res,next,userId)=>{ ... });
- *
+ 
+ */
+
+ /*
+
  * ============================================
  * TODO-5 (/users/:userId route):
  * ============================================
@@ -79,7 +113,11 @@ app.listen(3000, () => console.log("API running at http://localhost:3000"));
  *   - return JSON: { ok:true, userId: req.userIdNum }
  *   HINT:
  *     app.get("/users/:userId", (req,res)=>{ ... });
- *
+ 
+ */
+
+ /*
+
  *============================================
  *Test the following URLS
  *============================================
