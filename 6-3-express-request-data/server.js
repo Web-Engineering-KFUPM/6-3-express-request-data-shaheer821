@@ -80,7 +80,6 @@ app.get("/echo", (req, res) => {
  *     app.get("/profile/:first/:last", (req,res)=>{ ... });
  *     const { first, last } = req.params;
  
-
  */
 app.get("/profile/:first/:last", (req, res) => {
   const { first, last } = req.params;
