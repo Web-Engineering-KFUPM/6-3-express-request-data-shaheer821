@@ -126,7 +126,12 @@ app.param("userId", (req, res, next, userId) => {
  *     app.get("/users/:userId", (req,res)=>{ ... });
  
  */
-
+app.get("/users/:userId", (req, res) => {
+  res.json({
+    ok: true,
+    userId: req.userIdNum
+  });
+});
  /*
 
  *============================================
